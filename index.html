@@ -1,13 +1,180 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>portfolio</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="./images/logo.ico" />
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="¡Hola! Mi nombre es Marcos González y soy desarrollador web front-end. Aquí podrás encontrar más información sobre mi y algunos de mis trabajos más recientes.">
+  <meta name="author" content="Marcos González">
+  <meta name="keywords" content="Portafolio, front-end, React, Marcos González">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eaeaf2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#191c1f" />
+  <title> Marcos González | Portafolio </title>
+</head>
+
+<body>
+  <header>
+    <a href="#"><img src="./images/logo.svg" alt="logo"></a>
+    <nav>
+      <a class="header_button" href="">
+        <img src="./images/linkedin.svg" alt="LinkedIn">
+      </a>
+      <a class="header_button" href="https://github.com/ImLecus">
+        <img src="./images/github.svg" alt="Github">
+      </a>
+    </nav>
+  </header>
+  <main>
+
+
+    <section>
+      <h3>Hola 👋, mi nombre es</h3>
+      <h1>
+        <div><span>M</span><span>a</span><span>r</span><span>c</span><span>o</span><span>s</span></div>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <div>
+          <span>G</span><span>o</span><span>n</span><span>z</span><span>á</span><span>l</span><span>e</span><span>z</span>
+        </div>
+      </h1>
+      <h3>Software Engineer</h3>
+      <button class="primary cta" onclick="() => {}">Descarga mi CV</button>
+    </section>
+
+    <section class="section_dark">
+      <div>
+        <h2>Sobre mí</h2>
+        <p>Convierto ideas de negocio en soluciones digitales escalables, robustas y eficientes.
+          Llevo aprendiendo y desarrollando software desde hace 10 años. Actualmente, curso el tercer
+          año de Ingeniería Informática en la Universidad de Alicante, con mención en Ingeniería del Software.
+          <br><br>
+          Soy el candidato adecuado si buscas a alguien que trabaje bien en equipo, aprenda rápida y continuamente,
+          aporte una visión crítica y tenga una gran pasión por el mundo del software.
+        </p>
+      </div>
+      <h3>Tecnologías que manejo:</h3>
+      <div style="display: flex; flex-direction: row;">
+        <div style="display: flex; flex-direction: column; width: 50%;">
+          <div class="tech__container">
+            <h4>Front-end + Mobile</h4>
+            <ul class="tech__list">
+              <li><img alt="" src="images/react.svg" />React</li>
+              <li><img alt="" src="images/react.svg" />React Native</li>
+              <li><img alt="" src="images/bootstrap.svg" />Bootstrap</li>
+              <li><img alt="" src="images/tailwind.svg" />Tailwind CSS</li>
+            </ul>
+          </div>
+          <div class="tech__container">
+            <h4>Back-end</h4>
+            <ul class="tech__list">
+              <li><img alt="" src="images/python.svg" />Python</li>
+              <li><img alt="" src="images/dotnet.svg" />C#</li>
+              <li><img alt="" src="images/php.svg" />PHP</li>
+              <li><img alt="" src="images/cpp.svg" />C/C++</li>
+              <li><img alt="" src="images/java.svg" />Java</li>
+              <li><img alt="" src="images/javascript.svg">JavaScript</li>
+              <li><img alt="" src="images/typescript.svg" />TypeScript</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tech__container" style="width: 50%;">
+          <h4>Otros</h4>
+          <ul class="tech__list">
+            <li><img alt="" src="images/docker.svg" />Docker</li>
+            <li><img alt="" src="images/kubernetes.svg" />Kubernetes</li>
+            <li><img alt="" src="images/git.svg" />Git</li>
+            <li><img alt="" src="images/linux.svg" />Linux</li>
+            <li><img alt="" src="images/bash.svg" />Bash</li>
+            <li><img alt="" src="images/postman.svg" />Postman</li>
+            <li><img alt="" src="images/wordpress.svg" />WordPress</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="Proyectos">
+      <h2>Proyectos personales</h2>
+      <div class="space"></div>
+      <div class="card_container">
+        <div class="card">
+          <img alt="Hyassets" src="./images/hyassets.webp">
+          <div>
+            <p>
+              Una página web sencilla que hice cuando tenía 15 años. Era fanático del videojuego
+              Hytale, y ya que aún no había sido lanzado, hice una página para que un usuario que
+              recreaba modelos del juego en 3D pudiera darle visibilidad.
+            </p>
+            <div class="link_container">
+              <button class="card_link" onclick="window.location.href = 'https://github.com/ImLecus/HyAssetsWeb'">
+                <img width="20" height="20" src="./images/github.svg" alt="Código fuente" />
+                Código fuente
+              </button>
+              <button class="card_link filled" onclick="window.location.href = 'https://hyassets.netlify.app'">
+                <img width="20" height="20" src="./images/web.svg" alt="Página web" />
+                Página web
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img alt="Platinum Theme" src="./images/platinum.webp">
+          <div>
+            <p>
+              Un tema de Visual Studio Code que desarrollé con 16 años, página web incluida.
+            </p>
+            <div class="link_container">
+              <button class="card_link" onclick="window.location.href = 'https://github.com/ImLecus/Platinum-Theme'">
+                <img width="20" height="20" src="./images/github.svg" alt="Código fuente" />
+                Código fuente
+              </button>
+              <button class="card_link filled" onclick="window.location.href = 'https://platinum-theme.netlify.app'">
+                <img width="20" height="20" src="./images/web.svg" alt="Página web" />
+                Página web
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img alt="Swiss-stats" src="./images/swiss-stats.jpg">
+          <div>
+            <p>
+              Soy un fanático de Suiza, y me gustaría poder vivir allí en unos años. Hice como
+              proyecto personal un mapa interactivo de Suiza, con información relevante y fotos
+              de cada cantón.
+            </p>
+            <div class="link_container">
+              <button class="card_link" onclick="window.location.href = 'https://github.com/ImLecus/swiss-stats'">
+                <img width="20" height="20" src="./images/github.svg" alt="Código fuente" />
+                Código fuente
+              </button>
+              <button class="card_link filled" onclick="window.location.href = 'https://swiss-stats.statichost.page'">
+                <img width="20" height="20" src="./images/web.svg" alt="Página web" />
+                Página web
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section_dark">
+      <h2>Contacto</h2>
+      <div style="display: flex; justify-content: center;">
+        <form method="POST" id="form" name="contactForm" data-netlify="true" action="./index.html">
+          <input type="hidden" name="form-name" value="contactForm"/>
+          <div style="display: flex; flex-direction: column; justify-content: center; align-items: center">
+            <input type="text" placeholder="Nombre" name="name" autocomplete="off" required=""/>
+            <input type="email" placeholder="Correo electrónico" name="email" autocomplete="off" required=""/>
+            <textarea placeholder="Escribe aquí tu mensaje..." name="message" required=""></textarea>
+            <button class="primary" type="submit">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>Hecho con 💙 por Marcos González</p>
+  </footer>
+</body>
 </html>
