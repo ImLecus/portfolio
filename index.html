@@ -19,7 +19,7 @@
   <header>
     <a href="#"><img src="./images/logo.svg" alt="logo"></a>
     <nav>
-      <a class="header_button" href="">
+      <a class="header_button" href="https://www.linkedin.com/in/mgonzalez-dev/">
         <img src="./images/linkedin.svg" alt="LinkedIn">
       </a>
       <a class="header_button" href="https://github.com/ImLecus">
@@ -40,7 +40,15 @@
         </div>
       </h1>
       <h3>Software Engineer</h3>
-      <button class="primary cta" onclick="() => {}">Descarga mi CV</button>
+      <button class="primary cta" onclick="
+        console.log('hola');
+        const link = document.createElement('a');
+        link.href = './CV.pdf';
+        link.download = './CV.pdf';
+        link.target = '_blank'
+        link.click();
+        document.removeChild(link);
+      ">Descarga mi CV</button>
     </section>
 
     <section class="section_dark">
