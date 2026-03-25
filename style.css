@@ -121,7 +121,7 @@ img {
 h3,
 p {
     font-family: var(--text-font), monospace;
-    color: var(--text)
+    color: var(--text);
 }
 
 .space {
@@ -138,19 +138,18 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 19px !important;
     padding: 5px 0;
     border-top: 1px solid var(--primary);
 }
 h2 {
     font-family: var(--text-font), monospace;
-    font-size: 32px !important;
+    font-size: 2rem;
     margin: 0;
     text-shadow: 0 5px 3px rgba(0, 0, 0, 0.3);
 }
 
 h3 {
-    font-size: 28px !important;
+    font-size: 1.75rem;
     font-weight: 400;
     color: var(--text) !important;
     text-shadow: 0 6px 3px rgba(0, 0, 0, 0.3);
@@ -158,14 +157,14 @@ h3 {
 
 p {
     text-align: left;
-    font-size: 19px;
+    font-size: 1.25rem;
     opacity: .9 !important;
     padding: 25px 0;
     margin: 0;
 }
 
 section {
-    padding: 150px 20%;
+    padding: 150px 20vw;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
@@ -184,7 +183,7 @@ button {
     height: 50px;
     margin: 5px !important;
     transition: ease-in, .5s;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .primary {
@@ -277,7 +276,7 @@ form button {
         justify-content: space-between;
 
         & p {
-            font-size: 16px !important;
+            font-size: 16px;
         }
     }
 
@@ -288,11 +287,11 @@ form button {
 }
 
 .link_container {
-    justify-self: end;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     width: 100%;
-    font-size: 14px;
+    font-size: 0.8rem;
+    flex-wrap: wrap;
 
     & img {
         margin-right: 8px;
@@ -304,7 +303,8 @@ form button {
 .card_link {
     display: inline-flex;
     flex-wrap: nowrap;
-    width: 50%;
+    width: 40%;
+    min-width: fit-content;
     border-radius: 8px;
     border: 1px solid var(--primary);
     color: var(--primary);
@@ -410,18 +410,19 @@ header {
     MAIN TITLE
  */
 h1 {
-    font-size: 2em;
     margin: 1.25rem 0;
     -webkit-animation: 1s title;
     animation: 1s title;
 
     & div {
         display: inline-block;
+
         & span {
             text-transform: uppercase;
             font-family: Bebas Neue, serif !important;
             font-weight: 500;
-            font-size: 120px;
+
+            font-size: 8rem;
             text-shadow: 0 2px 50px var(--title-shadow), 0 5px 15px var(--shadow);
             transition: .2s linear;
             animation: 6s infinite jump;
@@ -494,6 +495,21 @@ h1 :nth-child(3) :nth-child(8) {
 /*
     TECHNOLOGY COMPONENTS
  */
+
+#separator-x {
+    display: flex;
+    flex-direction: row;
+
+    & > * {
+        width: 50%;
+    }
+}
+
+#separator-y {
+    display: flex;
+    flex-direction: column;
+}
+
 .tech__container {
     padding: 10px 20px 20px 20px;
     margin: 5px;
@@ -503,10 +519,16 @@ h1 :nth-child(3) :nth-child(8) {
     font-family: var(--text-font), monospace;
 }
 
+.card_link {
+    margin: 5px !important;
+}
+
 .tech__list {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    padding: 0;
 
     & li {
         border: 1px solid var(--primary);
@@ -581,6 +603,24 @@ h1 :nth-child(3) :nth-child(8) {
 /*
     MEDIA QUERIES
  */
+@media (max-width: 1200px){
+    #Proyectos {
+        padding: 150px 10vw !important;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    h1 > div > span {
+        font-size: 6rem !important;
+    }
+
+    h1 > span {
+        font-size: 1rem;
+    }
+}
+
 @media (max-width:500px) {
     form div {
         width: 60vw !important;
@@ -590,16 +630,16 @@ h1 :nth-child(3) :nth-child(8) {
         margin: 5px 20px
     }
 
-    h1 span {
-        font-size: 90px !important
-    }
-
     h1>:nth-child(2) {
         display: none
     }
 
     .card {
-        width: 500px !important
+        width: 100%;
+    }
+
+    .link_container {
+        flex-wrap: wrap;
     }
 
     h1,
@@ -608,18 +648,74 @@ h1 :nth-child(3) :nth-child(8) {
         text-align: center
     }
 
-    h1 {
-        font-size: 90px !important
+    .card_link * {
+        font-size: 50% !important;
     }
-}
 
-@media (max-width:400px) {
+    #inicio {
+        padding-top: 10vh !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tech__container {
+        flex-grow: 1;
+    }
+
+    .tech__list {
+        margin: 0;
+        justify-content: center;
+        width: 100%;
+        
+
+        & li {
+            width: 100%;
+        }
+    }
+
+    #separator-x {
+        flex-direction: column;
+
+        & > * {
+            width: initial;
+        }
+    }
+
+    #separator-y {
+        width: 100%;
+    }
+
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+
     h1 span {
-        font-size: 76px !important
+        font-size: 4.5rem !important
     }
 
     h2 {
-        font-size: 60%;
+        font-size: 2rem;
         margin-bottom: 0 !important
     }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    h4 {
+        font-size: 1rem;
+    }
+
+    p, .tech__list li {
+        font-size: 0.9rem !important;
+    }
+
+    section {
+        padding: 100px 10vw;
+    }
+
 }
