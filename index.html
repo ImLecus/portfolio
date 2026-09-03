@@ -40,9 +40,6 @@
   <header>
     <a href="#"><img src="./images/logo.svg" alt="logo"></a>
     <nav>
-      <a class="header_button" href="https://www.linkedin.com/in/mgonzalez-dev/">
-        <img src="./images/linkedin.svg" alt="LinkedIn">
-      </a>
       <a class="header_button" href="https://github.com/ImLecus">
         <img src="./images/github.svg" alt="Github">
       </a>
@@ -64,8 +61,8 @@
       <button class="primary cta" onclick="
         console.log('hola');
         const link = document.createElement('a');
-        link.href = './CV.pdf';
-        link.download = './CV.pdf';
+        link.href = './CV_Marcos_Gonzalez_Fernandez.pdf';
+        link.download = './CV_Marcos_Gonzalez_Fernandez.pdf';
         link.target = '_blank'
         link.click();
         document.removeChild(link);
@@ -126,6 +123,21 @@
       <h2>Proyectos personales</h2>
       <div class="space"></div>
       <div class="card_container">
+        <div class="card">
+          <img alt="Hyassets" src="./images/quarzum.webp">
+          <div>
+            <p>
+              Mi propio lenguaje de programación. Actualmente tiene un compilador hecho en más de 9000 líneas
+               de C, una extensión de Visual Studio Code, y estoy desarrollando un compilador hecho en el propio Quarzum.
+            </p>
+            <div class="link_container">
+              <button class="card_link" onclick="window.location.href = 'https://github.com/QuarzumLang/quarzumc'">
+                <img width="20" height="20" src="./images/github.svg" alt="Código fuente" />
+                Código fuente
+              </button>
+            </div>
+          </div>
+        </div>
         <div class="card">
           <img alt="Hyassets" src="./images/hyassets.webp">
           <div>
