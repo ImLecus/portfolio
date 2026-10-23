@@ -517,7 +517,7 @@ h1 {
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     form div {
         width: 60vw !important;
     }
@@ -549,8 +549,12 @@ h1 {
     }
 
     h2 {
-        font-size: 3rem;
-        margin-bottom: 0 !important;
+        font-size: 2rem;
+    }
+
+    .certifications img {
+        width: 100px;
+        height: 100px;
     }
 
     h3 {
