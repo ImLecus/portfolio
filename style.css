@@ -193,57 +193,6 @@ button {
         transform: translateY(-2px);
     }
 }
-/*
-    FORMULARY
- */
-form :is(input, textarea) {
-    box-sizing: border-box;
-    resize: none;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    transition: ease-in, 0.5s;
-    padding: 20px;
-    width: 100%;
-    margin: 5px;
-    background-color: var(--bg-light);
-    border: 1px solid var(--primary) !important;
-    color: var(--text) !important;
-}
-
-form :is(input, textarea)::placeholder {
-    transition: all 0.2s ease-in;
-}
-
-form :is(input, textarea):focus {
-    border: none;
-    outline: 0;
-    color: var(--light);
-}
-
-form div {
-    width: 30vw;
-    background-color: var(--bg-dark);
-    border-radius: 15px;
-    padding: 20px;
-    margin-top: 80px;
-}
-
-form :is(input, textarea):focus::placeholder {
-    opacity: 0.5;
-}
-
-textarea {
-    overflow: auto;
-    height: 250px;
-}
-
-form input {
-    height: 50px;
-}
-
-form button {
-    width: 100%;
-}
 
 /*
     CARDS
