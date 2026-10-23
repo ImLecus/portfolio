@@ -6,11 +6,6 @@
     src: url(font/BebasNeue-Regular.ttf);
 }
 
-@font-face {
-    font-family: Fira Code;
-    src: url(font/FiraMono-Regular.ttf);
-}
-
 /*
     GLOBAL VARIABLES
  */
@@ -22,7 +17,8 @@
     --text: #f0f0f0;
     --title-shadow: #3ff9ff78;
     --shadow: rgba(0, 0, 0, 0.1);
-    --text-font: Fira Code, monospace;
+    --text-font: monospace;
+    color-scheme: light dark;
 }
 
 /*
@@ -145,14 +141,12 @@ h2 {
     font-family: var(--text-font), monospace;
     font-size: 2rem;
     margin: 0;
-    text-shadow: 0 5px 3px rgba(0, 0, 0, 0.3);
 }
 
 h3 {
     font-size: 1.75rem;
     font-weight: 400;
     color: var(--text);
-    text-shadow: 0 6px 3px rgba(0, 0, 0, 0.3);
 }
 
 p {
