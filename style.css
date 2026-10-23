@@ -258,13 +258,16 @@ header {
     }
 }
 
+header nav a[aria-current="page"] {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
 h1 {
     margin: 1.25rem 0;
 
     text-transform: uppercase;
-    font-family:
-        Bebas Neue,
-        serif !important;
+    font-family: Bebas Neue, serif;
     font-weight: 500;
     color: var(--primary);
 
@@ -313,27 +316,41 @@ h1 {
     background-size: 6px 6px;
 }
 
-.post-card__body h3 {
+.post-card__title {
     margin: 0 0 0.5rem;
     font-family: var(--display);
     font-size: clamp(1.5rem, 2.2vw, 2rem);
     font-weight: 400;
     line-height: 1.12;
     letter-spacing: -0.01em;
+    text-align: left;
+    color: var(--text);
 }
 
-.post-card__body h3 a {
+.post-card__title a {
     margin: 0;
     color: inherit;
 }
 
-.post-card__body h3 a::after {
+.post-card__title a::after {
     content: "";
     position: absolute;
     inset: 0;
 }
 
-.post-card__body p {
+.post-card__meta {
+    margin: 0 0 0.4rem;
+    padding: 0;
+    max-width: none;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    line-height: 1.4;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.post-card__excerpt {
     margin: 0;
     padding: 0;
     max-width: 48ch;
@@ -352,7 +369,7 @@ h1 {
     color: var(--primary);
 }
 
-.post-card:hover h3 {
+.post-card:hover .post-card__title {
     color: var(--primary);
 }
 
@@ -367,9 +384,22 @@ h1 {
         align-items: start;
     }
 
-    .post-card__body p {
+    .post-card__excerpt {
         max-width: none;
     }
+}
+
+/*
+    PAGE HEAD
+*/
+.page-title {
+    margin: 0;
+    font-family: var(--text-font), monospace;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    text-align: left;
+    text-transform: none;
+    color: var(--primary);
 }
 
 /*
