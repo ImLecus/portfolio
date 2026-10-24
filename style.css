@@ -286,6 +286,7 @@ h1 {
 
 .certifications img {
     display: block;
+    flex: 0 0 auto;
     width: 150px;
     height: 150px;
 }
