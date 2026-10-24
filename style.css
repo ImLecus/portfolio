@@ -145,6 +145,10 @@ h3 {
     color: var(--text);
 }
 
+li {
+    color: var(--text);
+}
+
 p {
     color: var(--text);
     text-align: left;
@@ -461,6 +465,22 @@ h1 {
     margin: 0 0 1.3em;
     font-size: 1.15rem;
     line-height: 1.7;
+}
+
+.post-body ul {
+    margin: 0 0 1.3em;
+    padding-left: 1.2em;
+    max-width: 66ch;
+}
+
+.post-body li {
+    margin-bottom: 0.35em;
+    font-size: 1.15rem;
+    line-height: 1.6;
+}
+
+.post-body li::marker {
+    color: var(--primary);
 }
 
 .post-lead {

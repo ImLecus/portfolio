@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+        <link rel="stylesheet" href="../style.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Una vulnerabilidad crítica en PHP dejó al descubierto algo más incómodo: quizá tu web no necesita back-end, ni JavaScript, ni nada que actualizar."
+        />
+        <meta name="author" content="Marcos González" />
+        <meta name="theme-color" content="#f8f1e4" />
+        <meta name="robots" content="index, follow" />
+        <link
+            rel="canonical"
+            href="https://mgonzalez.me/posts/realmente-necesitamos-usar-php.html"
+        />
+        <meta
+            property="og:title"
+            content="¿Realmente necesitamos usar PHP? | Marcos González"
+        />
+        <meta
+            property="og:description"
+            content="Una vulnerabilidad crítica en PHP dejó al descubierto algo más incómodo: quizá tu web no necesita back-end."
+        />
+        <meta
+            property="og:url"
+            content="https://mgonzalez.me/posts/realmente-necesitamos-usar-php.html"
+        />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <title>¿Realmente necesitamos usar PHP? | Marcos González</title>
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                "headline": "¿Realmente necesitamos usar PHP?",
+                "description": "Una vulnerabilidad crítica en PHP dejó al descubierto algo más incómodo: quizá tu web no necesita back-end.",
+                "datePublished": "2026-10-24",
+                "dateModified": "2026-10-24",
+                "inLanguage": "es",
+                "url": "https://mgonzalez.me/posts/realmente-necesitamos-usar-php.html",
+                "author": {
+                    "@type": "Person",
+                    "name": "Marcos González",
+                    "url": "https://mgonzalez.me"
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <a href="../index.html"
+                ><img src="../images/logo.svg" alt="logo"
+            /></a>
+            <nav>
+                <a href="../blog.html">Blog</a>
+                <a download href="../CV_Marcos_Gonzalez_Fernandez.pdf">CV</a>
+                <a class="header_button" href="https://github.com/ImLecus">
+                    <img src="../images/github.svg" alt="Github" />
+                </a>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <article class="post">
+                    <header class="post-header">
+                        <p class="post-meta">
+                            <time datetime="2026-10-24">24 oct 2026</time>
+                            · 5 min
+                        </p>
+                        <h1 class="post-title">
+                            ¿Realmente necesitamos usar PHP?
+                        </h1>
+                    </header>
+
+                    <img
+                        class="post-cover"
+                        src="../images/thumbnails/realmente-necesitamos-usar-php.webp"
+                        alt=""
+                        width="960"
+                        height="540"
+                    />
+
+                    <div class="post-body">
+                        <p class="post-lead">
+                            Hace unos pocos días, el lenguaje de programación
+                            PHP encontró una vulnerabilidad crítica que
+                            permitía, entre otras cosas, ejecutar código remoto
+                            en cualquier servidor con PHP, sin usuario. La
+                            vulnerabilidad fue tan crítica que anunciaron la
+                            fecha exacta de los parches y no revelaron detalles
+                            para que no fuera explotado.
+                        </p>
+
+                        <p>
+                            En resumen, Internet casi se convierte en una
+                            anarquía total por culpa de una vulnerabilidad, y
+                            muchos negocios tuvieron que dejar de dar servicio
+                            temporalmente para que nadie se aprovechara de esta
+                            vulnerabilidad. Pero, ¿realmente cualquier persona
+                            con una web necesita PHP?
+                        </p>
+
+                        <h2>PHP, uno de los pilares de Internet</h2>
+
+                        <p>
+                            PHP es el lenguaje más utilizado en la web hoy en
+                            día. Tanto es así, que el
+                            <strong>80% de los servidores</strong> está
+                            programado en PHP. A esto le sumamos que los CMS
+                            tradicionales como WordPress, Joomla o Drupal están
+                            escritos en PHP, por lo que la cifra cobra algo más
+                            de sentido ahora. Esto deja una cosa bastante clara:
+                            <strong
+                                >si PHP es vulnerado, generalmente el 80% de
+                                Internet es vulnerado</strong
+                            >. Es una cifra abismal.
+                        </p>
+
+                        <p>
+                            Personalmente he tenido el placer de trabajar con
+                            frameworks de PHP como Laravel y hacer desarrollo
+                            fullstack o simplemente backend con ello se me hace
+                            una experiencia muy agradable, dada la naturaleza
+                            del propio PHP. Sin embargo, el problema real no
+                            inicia en PHP, pues las vulnerabilidades salen casi
+                            todos los días y es imposible crear software 100%
+                            seguro, pues la tecnología evoluciona.
+                        </p>
+
+                        <p>
+                            Pero, si el problema no es de PHP, ¿de quién es? En
+                            realidad, los lenguajes de programación no tienen la
+                            culpa. Te cambies al que te cambies siempre saldrán
+                            parches cubriendo vulnerabilidades, sobre todo
+                            cuanto más te acerques a lenguajes enfocados en la
+                            web como el propio PHP o JavaScript. El problema,
+                            quizá, es que estamos matando moscas a cañonazos.
+                        </p>
+
+                        <h2>Por qué Internet está sobrecomplicado</h2>
+
+                        <p>
+                            Los desarrolladores solemos separar las aplicaciones
+                            web en front-end, la parte visual y que se ejecuta
+                            en el cliente; y back-end, la parte de lógica y
+                            acceso a bases de datos que se ejecuta en el
+                            servidor. El back-end (así como parte del código del
+                            front-end) surge a partir de la
+                            <strong>Web 2.0</strong>, es decir, cuando pasamos de
+                            simplemente mostrar contenido, a mostrar contenido
+                            interactivo.
+                        </p>
+
+                        <p>
+                            Esto significa que cualquier página con gestión de
+                            usuarios, tiendas online, o simplemente cualquier
+                            lógica más allá de mostrar contenido y ya, necesita
+                            un backend. No obstante, ¿acaso una landing page
+                            necesita un backend? ¿Y un blog? Damos por hecho que
+                            por ser un sitio web debemos utilizar alguna
+                            tecnología de back-end o utilizar frameworks de
+                            JavaScript con tal de «ser una web moderna». Pero no
+                            es así en absoluto.
+                        </p>
+
+                        <p>
+                            Como ejemplo pondré este mismo artículo. De hecho,
+                            este mismo sitio web. No tengo ningún tipo de
+                            gestión de usuarios, ni vendo nada, ni recojo
+                            analíticas. Por tanto, no debe haber back-end.
+                            Tampoco verás absolutamente nada de JavaScript.
+                            Simplemente no hay código corriendo, y eso no es
+                            malo. La web está destinada exclusivamente a mostrar
+                            contenido, y por ello, cuantas menos dependencias
+                            tenga, mejor.
+                        </p>
+
+                        <p>
+                            De esta manera, no hay posibles vulnerabilidades en
+                            el código de la web, porque simplemente no hay
+                            código. Por supuesto, existen muchos otros frentes
+                            donde la web puede ser atacada, pero el mantenimiento
+                            del sitio se simplifica muchísimo. Pensemos, sin
+                            código JavaScript ni back-end:
+                        </p>
+
+                        <ul>
+                            <li>
+                                No hay que actualizar versiones del backend
+                            </li>
+                            <li>
+                                No hay dependencias, ni posibles paquetes
+                                infectados de npm
+                            </li>
+                            <li>No hay CI, porque no hay tests</li>
+                            <li>
+                                No hay despliegue complejo, solo hay que mover
+                                archivos al servidor
+                            </li>
+                            <li>
+                                Una vulnerabilidad no compromete la página
+                            </li>
+                        </ul>
+
+                        <h2>Tratando de poner soluciones</h2>
+
+                        <p>
+                            Creo que la solución para páginas sencillas sin
+                            funcionalidades está clara: simplificar el sitio.
+                            Evitar frameworks de JavaScript o incluso evitar por
+                            completo JavaScript a ser posible. Si necesitas
+                            componentes, existen herramientas como Pug que
+                            montan el HTML final con componentes que creas tú, o
+                            creadores de sitios estáticos como Hugo.
+                        </p>
+
+                        <p>
+                            Por tanto, si alguna persona que está leyendo esto
+                            tiene una página web sin funcionalidades complejas
+                            en un CMS como WordPress, le aconsejaría migrar su
+                            web a un sitio estático con HTML y CSS puro, las
+                            ventajas son inmensas.
+                        </p>
+
+                        <p>
+                            Y para aquellas personas que sí usan un back-end,
+                            les aconsejaría <strong>delegar a terceros</strong>.
+                            He conocido mucha gente que quiere una página web
+                            donde vender infoproductos. ¿Por qué no crear un
+                            sitio estático con un enlace a Patreon, a Udemy o a
+                            Coursera?
+                        </p>
+
+                        <p>
+                            Lo cierto es que si decides ir a lo bruto y usar
+                            PHP, Stripe, y gestionar a mano todo, también debes
+                            asumir cierta responsabilidad. ¿Qué hubiera ocurrido
+                            si se hubieran revelado detalles de la
+                            vulnerabilidad mientras estás durmiendo?
+                            Probablemente alguien hubiera robado los datos de tu
+                            web, o destruirla, o convertirla en una estafa de
+                            criptomonedas y virus troyanos.
+                        </p>
+
+                        <p>
+                            Y sin embargo, si decides simplificar, y delegar en
+                            plataformas grandes con equipos especializados como
+                            Udemy, Coursera, Patreon, entre otras, no te
+                            hubieras tenido que preocupar. El equipo de esa
+                            empresa de terceros tendría muchos más recursos para
+                            solucionar el problema a tiempo.
+                        </p>
+
+                        <h2>Conclusión</h2>
+
+                        <p>
+                            Simplificar es la clave para hacer Internet más
+                            seguro y eficaz. Evitar código innecesario evita
+                            también ataques innecesarios, no tener un back-end
+                            si no lo necesitas ahorra dinero y quebraderos de
+                            cabeza, y delegar el mantenimiento de áreas críticas
+                            como los pagos a empresas de terceros te asegura
+                            tener un servicio más eficaz y fácil de mantener.
+                        </p>
+                    </div>
+
+                    <footer class="post-footer">
+                        <a href="../blog.html">← Todas las entradas</a>
+                    </footer>
+                </article>
+            </section>
+        </main>
+        <footer>
+            <p>Hecho con 💙 por Marcos González</p>
+        </footer>
+    </body>
+</html>
