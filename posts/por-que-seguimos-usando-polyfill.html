@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+        <link rel="stylesheet" href="../style.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Polyfill nació en 2009 para tapar la fragmentación de los navegadores. En 2026 seguimos cargándolo en sitios estáticos, y ya no tiene sentido."
+        />
+        <meta name="author" content="Marcos González" />
+        <meta name="theme-color" content="#f8f1e4" />
+        <meta name="robots" content="index, follow" />
+        <link
+            rel="canonical"
+            href="https://mgonzalez.me/posts/por-que-seguimos-usando-polyfill.html"
+        />
+        <meta
+            property="og:title"
+            content="¿Por qué seguimos usando Polyfill? | Marcos González"
+        />
+        <meta
+            property="og:description"
+            content="Polyfill nació en 2009 para tapar la fragmentación de los navegadores. En 2026 seguimos cargándolo en sitios estáticos, y ya no tiene sentido."
+        />
+        <meta
+            property="og:url"
+            content="https://mgonzalez.me/posts/por-que-seguimos-usando-polyfill.html"
+        />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <title>¿Por qué seguimos usando Polyfill? | Marcos González</title>
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                "headline": "¿Por qué seguimos usando Polyfill?",
+                "description": "Polyfill nació en 2009 para tapar la fragmentación de los navegadores. En 2026 seguimos cargándolo en sitios estáticos, y ya no tiene sentido.",
+                "datePublished": "2026-11-03",
+                "dateModified": "2026-11-03",
+                "inLanguage": "es",
+                "url": "https://mgonzalez.me/posts/por-que-seguimos-usando-polyfill.html",
+                "author": {
+                    "@type": "Person",
+                    "name": "Marcos González",
+                    "url": "https://mgonzalez.me"
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <a href="../index.html"
+                ><img src="../images/logo.svg" alt="logo"
+            /></a>
+            <nav>
+                <a href="../blog.html">Blog</a>
+                <a download href="../CV_Marcos_Gonzalez_Fernandez.pdf">CV</a>
+                <a class="header_button" href="https://github.com/ImLecus">
+                    <img src="../images/github.svg" alt="Github" />
+                </a>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <article class="post">
+                    <header class="post-header">
+                        <p class="post-meta">
+                            <time datetime="2026-11-03">3 nov 2026</time>
+                            · 4 min
+                        </p>
+                        <h1 class="post-title">
+                            ¿Por qué seguimos usando Polyfill?
+                        </h1>
+                    </header>
+
+                    <img
+                        class="post-cover"
+                        src="../images/thumbnails/por-que-seguimos-usando-polyfill.webp"
+                        alt=""
+                        width="960"
+                        height="540"
+                    />
+
+                    <div class="post-body">
+                        <p class="post-lead">
+                            Hace unos días estuve revisando un sitio web algo
+                            cuestionable. Por una parte, era un sitio totalmente
+                            estático usando NextJS, y no entendía para qué cargar
+                            tantos chunks de JavaScript por un sitio estático que
+                            perfectamente podrías hacer con Astro. Pero a pesar
+                            de ello, seguí revisando la página y me di cuenta de
+                            que usaba varios Polyfills. Y entonces me hice la
+                            pregunta: ¿por qué seguimos usando Polyfill hoy en
+                            día?
+                        </p>
+
+                        <h2>De dónde surge Polyfill</h2>
+
+                        <p>
+                            El término "polyfill" nace en el 2009 por Remy Sharp, aunque
+                            el servicio polyfill.io nació en 2014 por Andrew Betts. En su día,
+                            la fragmentación de los navegadores era máxima.
+                            Coexistían muchos motores de navegador distintos y,
+                            para resolver compatibilidades, era necesario
+                            implementar las nuevas funcionalidades de JavaScript
+                            a mano y ponerlo en el sitio web. De esta manera,
+                            Polyfills como <code>String.prototype.trim()</code> se
+                            implementarían en un script como:
+                        </p>
+
+                        <pre><code class="language-js">if (!String.prototype.trim) {
+    String.prototype.trim = function () {
+        return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, "");
+    };
+}</code></pre>
+
+                        <p>
+                            Para la época, esto solucionaba problemas de
+                            compatibilidad y permitía tener implementadas
+                            funciones que todavía no habían llegado al navegador.
+                            Sin embargo, esto tiene varios problemas claros: se
+                            está cargando JavaScript que en ocasiones es
+                            innecesario, y dicho JavaScript podría ser malicioso.
+                            Y eso fue exactamente lo que acabó ocurriendo.
+                        </p>
+
+                        <h2>El ataque de cadena de suministro</h2>
+
+                        <p>
+                            En febrero de 2024 Funnull, un CDN 
+                            chino, compró el dominio polyfill.io y la cuenta de
+                            GitHub original. El creador original lanzó una
+                            advertencia pública:
+                            <strong>«remove it IMMEDIATELY»</strong>.
+                        </p>
+
+                        <p>
+                            El CDN había sido comprometido, y estaba inyectando
+                            código malicioso, de manera que los que estaban
+                            utilizando Polyfill tenían código malicioso corriendo
+                            en sus sitios web. Más de 100.000 sitios web fueron
+                            comprometidos en todo el mundo.
+                        </p>
+
+                        <p>
+                            El código malicioso generalmente apuntaba a
+                            dispositivos móviles, y redirigía a sitios de estafa.
+                        </p>
+
+                        <p>
+                            Sin embargo, cabe aclarar que el término polyfill lo
+                            usamos para referirnos a ese código que implementa
+                            una funcionalidad de JavaScript, por lo que no es una
+                            marca ni han sido todos ellos vulnerados.
+                        </p>
+
+                        <h2>El uso de Polyfill en 2026</h2>
+
+                        <p>
+                            Hoy en día, el uso de polyfills es cada vez más
+                            escaso. Y no es para menos; los navegadores ya no
+                            están tan fragmentados, y generalmente que una
+                            función nueva llegue a JavaScript es sólo cuestión de
+                            unas semanas que llegue también a la gran mayoría de
+                            navegadores.
+                        </p>
+
+                        <p>
+                            Para casos especiales, como querer asegurar
+                            compatibilidad con navegadores antiguos, aún podría
+                            tener su utilidad, pero personalmente creo que para
+                            eso se podría usar el backend. Y en caso de funciones
+                            muy sencillas, como
+                            <code>String.prototype.trim()</code>, incluso se
+                            podrían añadir al propio código del cliente y
+                            mantener sin problemas.
+                        </p>
+
+                        <p>
+                            Sin embargo, y aunque estas páginas que usen
+                            polyfills están seguras porque no llaman a
+                            polyfill.io sino que cargan el código localmente,
+                            ¿realmente son necesarios en 2026?
+                        </p>
+
+                        <p>
+                            En mi caso concreto, aquel sitio web que estuve
+                            revisando era un estudio de videojuegos. El sitio es
+                            realmente sencillo: muy cargado de CSS pero sin nada
+                            de funcionalidad real. La única interacción que había
+                            era un formulario de contacto. Y sin embargo, el
+                            sitio cargaba 7 polyfills:
+                        </p>
+
+                        <ul>
+                            <li><code>Array.prototype.at()</code></li>
+                            <li><code>Array.prototype.flat()</code></li>
+                            <li><code>Array.prototype.flatMap()</code></li>
+                            <li><code>Object.fromEntries()</code></li>
+                            <li><code>Object.hasOwn()</code></li>
+                            <li><code>String.prototype.trimEnd()</code></li>
+                            <li><code>String.prototype.trimStart()</code></li>
+                        </ul>
+
+                        <p>
+                            PageSpeed categoriza estos polyfill como «Legacy
+                            JavaScript», y menciona que no son necesarios para
+                            los navegadores modernos y podrían eliminarse sin
+                            problema. No sólo eso, estos polyfill que
+                            prácticamente nadie está usando realmente al visitar
+                            este sitio, los sirve NextJS, por lo que los dueños
+                            de este sitio sufren el riesgo de que ocurra otro
+                            ataque de cadena de suministro y vulneren su página.
+                        </p>
+
+                        <h2>Mi conclusión</h2>
+
+                        <p>
+                            Sinceramente, creo que el uso de polyfills debe
+                            acabar lo antes posible. La mayoría de navegadores
+                            modernos ya no necesitan estas técnicas, y además
+                            reduces el rendimiento del sitio y aumentas la
+                            superficie de ataque. Y lo peor de todo es que esto
+                            me lo he encontrado en un sitio web totalmente
+                            estático, donde se podría incluso mover parte de
+                            estas funcionalidades a un backend, o implementar
+                            funciones de formateo triviales como
+                            <code>String.prototype.trim</code> o
+                            <code>Array.prototype.at</code> en un par de líneas
+                            de JavaScript, pero no proporcionado por un tercero.
+                        </p>
+
+                        <p>
+                            Si tu sitio web utiliza polyfills, por favor revisa
+                            si acaso es necesario hacerlo, y dejemos de complicar
+                            la web.
+                        </p>
+                    </div>
+
+                    <footer class="post-footer">
+                        <a href="../blog.html">← Todas las entradas</a>
+                    </footer>
+                </article>
+            </section>
+        </main>
+        <footer>
+            <p>Hecho con 💙 por Marcos González</p>
+        </footer>
+    </body>
+</html>
