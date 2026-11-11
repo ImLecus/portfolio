@@ -469,7 +469,8 @@ h1 {
     line-height: 1.7;
 }
 
-.post-body ul {
+.post-body ul,
+.post-body ol {
     margin: 0 0 1.3em;
     padding-left: 1.2em;
     max-width: 66ch;
@@ -498,6 +499,30 @@ h1 {
     line-height: 1.15;
     text-align: left;
     color: var(--text);
+}
+
+.post-body h3 {
+    margin: 2em 0 0.5em;
+    font-family: var(--display);
+    font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: left;
+    color: var(--text);
+}
+
+.post-body .post-difficulty {
+    display: inline-block;
+    margin: 0.2rem 0 1.5rem;
+    padding: 0.2rem 0.55rem;
+    border: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: var(--primary);
 }
 
 .post-body code {
@@ -530,6 +555,7 @@ h1 {
 .post-body a {
     margin: 0;
     color: var(--primary);
+    font-weight: 700;
     text-decoration: underline;
     text-underline-offset: 3px;
 }
